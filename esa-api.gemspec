@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "esa/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "esa"
+  spec.name          = "esa-api"
   spec.version       = Esa::VERSION
   spec.authors       = ["mogulla3"]
   spec.email         = ["hs.iarn3@gmail.com"]

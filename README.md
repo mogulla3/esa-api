@@ -1,28 +1,30 @@
-# Esa
+# esa-api
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/esa`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Ruby interface to the [esa API](https://docs.esa.io/posts/102).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'esa'
+gem 'esa-api'
 ```
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install esa
+```
+$ gem install esa-api
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO
 
 ## Development
 
@@ -32,7 +34,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/esa.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mogulla3/esa-api.
 
 ## License
 
