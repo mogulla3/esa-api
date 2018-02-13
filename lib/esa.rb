@@ -1,5 +1,5 @@
 require "esa/version"
+require "esa/client"
 
 module Esa
-  # Your code goes here...
 end
