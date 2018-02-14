@@ -48,19 +48,11 @@ module Esa
     end
 
     def connection
-      @connection ||= Esa::Connection.new(host, port)
+      @connection ||= Esa::Connection.new(uri.host, uri.port)
     end
 
     def uri
       @uri ||= URI.parse(END_POINT)
-    end
-
-    def host
-      @uri.host
-    end
-
-    def port
-      @uri.port
     end
 
     def default_headers
