@@ -11,7 +11,7 @@ module Esa
     end
 
     def send(method, path, params, headers)
-      if method == "GET"
+      if method == 'GET'
         @conn.send_request(method, path, nil, headers)
       else
         @conn.send_request(method, path, params.to_json, headers)
