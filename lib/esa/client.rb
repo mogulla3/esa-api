@@ -41,7 +41,7 @@ module Esa
 
     # GET /v1/teams
     def get_teams(params = {}, headers = nil)
-      request('GET', "/v1/teams", params, headers)
+      request('GET', '/v1/teams', params, headers)
     end
 
     # GET /v1/teams/:team_name
@@ -54,7 +54,7 @@ module Esa
     def request(method, path, params = {}, headers = nil)
       uri.path = path
       uri.query = URI.encode_www_form(params) if method == 'GET' && !params.empty?
-      connection.send(method, uri.request_uri, params, headers || default_headers)
+      Esa::Response.new(connection.send(method, uri.request_uri, params, headers || default_headers))
     end
 
     def connection
