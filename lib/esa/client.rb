@@ -41,28 +41,33 @@ module Esa
 
     private
 
+    def request(method, path, params = {}, headers = nil)
+      uri.path = path
+      uri.query = URI.encode_www_form(params) if method == 'GET' && !params.empty?
+      connection.send(method, uri.request_uri, params, headers || default_headers)
+    end
+
+    def connection
+      @connection ||= Esa::Connection.new(host, port)
+    end
+
+    def uri
+      @uri ||= URI.parse(END_POINT)
+    end
+
+    def host
+      @uri.host
+    end
+
+    def port
+      @uri.port
+    end
+
     def default_headers
       {
         'Content-Type' => 'application/json',
         'Authorization' => "Bearer #{access_token}"
       }
-    end
-
-    def connection(host, port)
-      @connection ||= Esa::Connection.new(host, port)
-    end
-
-    def build_uri(method, path, params)
-      uri = URI.parse(END_POINT)
-      uri.path = path
-      uri.query = URI.encode_www_form(params) if method == 'GET' && !params.empty?
-      uri
-    end
-
-    def request(method, path, params = {}, headers = nil)
-      uri = build_uri(method, path, params)
-      conn = connection(uri.host, uri.port)
-      conn.send(method, uri.request_uri, params, headers || default_headers)
     end
   end
 end
