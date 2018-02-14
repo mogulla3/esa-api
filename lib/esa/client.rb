@@ -39,6 +39,16 @@ module Esa
       request('DELETE', "/v1/teams/#{team_name}/posts/#{post_number}", nil, headers)
     end
 
+    # GET /v1/teams
+    def get_teams(params = {}, headers = nil)
+      request('GET', "/v1/teams", params, headers)
+    end
+
+    # GET /v1/teams/:team_name
+    def get_team(params = {}, headers = nil)
+      request('GET', "/v1/teams/#{team_name}", params, headers)
+    end
+
     private
 
     def request(method, path, params = {}, headers = nil)
