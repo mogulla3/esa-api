@@ -16,37 +16,30 @@ module Esa
       yield(self) if block_given?
     end
 
-    # GET /v1/teams/:team_name/posts/:post_number
     def get_post(post_number, params = {}, headers = nil)
       request('GET', "/v1/teams/#{team_name}/posts/#{post_number}", params, headers)
     end
 
-    # GET /v1/teams/:team_name/posts
     def get_posts(params = {}, headers = nil)
       request('GET', "/v1/teams/#{team_name}/posts", params, headers)
     end
 
-    # POST /v1/teams/:team_name/posts
     def create_post(params, headers = nil)
       request('POST', "/v1/teams/#{team_name}/posts", params, headers)
     end
 
-    # PATCH /v1/teams/:team_name/posts/:post_number
     def update_post(post_number, params = {}, headers = nil)
       request('PATCH', "/v1/teams/#{team_name}/posts/#{post_number}", params, headers)
     end
 
-    # DELETE /v1/teams/:team_name/posts/:post_number
     def delete_post(post_number, headers = nil)
       request('DELETE', "/v1/teams/#{team_name}/posts/#{post_number}", nil, headers)
     end
 
-    # GET /v1/teams
     def get_teams(params = {}, headers = nil)
       request('GET', '/v1/teams', params, headers)
     end
 
-    # GET /v1/teams/:team_name
     def get_team(params = {}, headers = nil)
       request('GET', "/v1/teams/#{team_name}", params, headers)
     end
