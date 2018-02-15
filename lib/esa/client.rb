@@ -7,8 +7,10 @@ module Esa
     END_POINT = 'https://api.esa.io'.freeze
 
     def initialize(options = {})
-      options.each do |key, value|
-        instance_variable_set("@#{key}", value)
+      if options.is_a?(Hash)
+        options.each do |key, value|
+          instance_variable_set("@#{key}", value)
+        end
       end
 
       yield(self) if block_given?
@@ -51,9 +53,9 @@ module Esa
 
     private
 
-    def request(method, path, params = {}, headers = nil)
+    def request(method, path, params = nil, headers = nil)
       uri.path = path
-      uri.query = URI.encode_www_form(params) if method == 'GET' && !params.empty?
+      uri.query = URI.encode_www_form(params) if method == 'GET' && params.is_a?(Hash)
       Esa::Response.new(connection.send(method, uri.request_uri, params, headers || default_headers))
     end
 
