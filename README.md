@@ -1,4 +1,5 @@
 # esa-api
+[![Build Status](https://travis-ci.org/mogulla3/esa-api.svg?branch=master)](https://travis-ci.org/mogulla3/esa-api)
 
 A Ruby interface to the [esa API](https://docs.esa.io/posts/102).
 
