@@ -2,6 +2,7 @@ require 'uri'
 require 'esa/connection'
 require 'esa/response'
 require 'esa/client/team'
+require 'esa/client/stats'
 require 'esa/client/member'
 require 'esa/client/post'
 require 'esa/client/comment'
@@ -11,7 +12,6 @@ require 'esa/client/category'
 require 'esa/client/invitation'
 require 'esa/client/emoji'
 require 'esa/client/user'
-require 'esa/client/stats'
 
 module Esa
   class Client
