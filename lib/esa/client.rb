@@ -6,6 +6,7 @@ module Esa
     include Esa::Client::Member
     include Esa::Client::Post
     include Esa::Client::Comment
+    include Esa::Client::Star
 
     attr_accessor :access_token, :team_name #, :open_timeout, :read_timeout, :ssl_timeout
 
