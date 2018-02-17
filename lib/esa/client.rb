@@ -11,10 +11,12 @@ require 'esa/client/category'
 require 'esa/client/invitation'
 require 'esa/client/emoji'
 require 'esa/client/user'
+require 'esa/client/stats'
 
 module Esa
   class Client
     include Esa::Client::Team
+    include Esa::Client::Stats
     include Esa::Client::Member
     include Esa::Client::Post
     include Esa::Client::Comment
