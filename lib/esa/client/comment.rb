@@ -28,7 +28,7 @@ module Esa
 
       # DELETE /v1/teams/:team_name/comments/:comment_id
       def delete_comment(comment_id, headers = nil)
-        delete("/v1/teams/#{team}/comments/#{comment_id}", params, headers)
+        delete("/v1/teams/#{team}/comments/#{comment_id}", headers)
       end
     end
   end

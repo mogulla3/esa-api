@@ -7,6 +7,7 @@ require 'esa/client/post'
 require 'esa/client/comment'
 require 'esa/client/star'
 require 'esa/client/watch'
+require 'esa/client/category'
 
 module Esa
   class Client
@@ -16,6 +17,7 @@ module Esa
     include Esa::Client::Comment
     include Esa::Client::Star
     include Esa::Client::Watch
+    include Esa::Client::Category
 
     attr_accessor :access_token, :team_name #, :open_timeout, :read_timeout, :ssl_timeout
 
@@ -31,24 +33,20 @@ module Esa
       yield(self) if block_given?
     end
 
-    def get(path, params = nil, headers = nil)
+    def get(path, params, headers = nil)
       request('GET', path, params, headers)
     end
 
-    def post
-      request('POST', path, params = nil, headers = nil)
+    def post(path, params, headers = nil)
+      request('POST', path, params, headers)
     end
 
-    def patch
-      request('PATCH', path, params = nil, headers = nil)
+    def patch(path, params, headers = nil)
+      request('PATCH', path, params, headers)
     end
 
-    def put
-      request('PUT', path, params = nil, headers = nil)
-    end
-
-    def delete
-      request('DELETE', path, params = nil, headers = nil)
+    def delete(path, headers = nil)
+      request('DELETE', path, nil, headers)
     end
 
     private
