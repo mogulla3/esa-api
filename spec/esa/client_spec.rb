@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'json'
 
 RSpec.describe Esa::Client do
   describe '#initialize' do
