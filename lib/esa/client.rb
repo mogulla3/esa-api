@@ -1,4 +1,6 @@
 require 'uri'
+require 'esa/connection'
+require 'esa/response'
 require 'esa/client/team'
 require 'esa/client/member'
 require 'esa/client/post'
