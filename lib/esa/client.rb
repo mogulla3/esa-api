@@ -68,7 +68,7 @@ module Esa
     def default_headers
       {
         'Content-Type' => 'application/json',
-        'Authorization' => "Bearer #{access_token}"
+        'Authorization' => "Bearer #{@access_token}"
       }
     end
   end
