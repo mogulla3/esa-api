@@ -9,6 +9,7 @@ require 'esa/client/star'
 require 'esa/client/watch'
 require 'esa/client/category'
 require 'esa/client/invitation'
+require 'esa/client/emoji'
 
 module Esa
   class Client
@@ -20,6 +21,7 @@ module Esa
     include Esa::Client::Watch
     include Esa::Client::Category
     include Esa::Client::Invitation
+    include Esa::Client::Emoji
 
     attr_accessor :access_token, :team_name #, :open_timeout, :read_timeout, :ssl_timeout
 
