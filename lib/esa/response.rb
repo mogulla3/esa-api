@@ -1,3 +1,5 @@
+require 'json'
+
 module Esa
   class Response
     attr_reader :raw_body, :code, :message, :http_version
