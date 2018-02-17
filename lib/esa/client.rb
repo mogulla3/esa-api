@@ -17,23 +17,23 @@ module Esa
     end
 
     def get_post(post_number, params = {}, headers = nil)
-      request('GET', "/v1/teams/#{team_name}/posts/#{post_number}", params, headers)
+      request('GET', "/v1/teams/#{team}/posts/#{post_number}", params, headers)
     end
 
     def get_posts(params = {}, headers = nil)
-      request('GET', "/v1/teams/#{team_name}/posts", params, headers)
+      request('GET', "/v1/teams/#{team}/posts", params, headers)
     end
 
     def create_post(params, headers = nil)
-      request('POST', "/v1/teams/#{team_name}/posts", params, headers)
+      request('POST', "/v1/teams/#{team}/posts", params, headers)
     end
 
     def update_post(post_number, params = {}, headers = nil)
-      request('PATCH', "/v1/teams/#{team_name}/posts/#{post_number}", params, headers)
+      request('PATCH', "/v1/teams/#{team}/posts/#{post_number}", params, headers)
     end
 
     def delete_post(post_number, headers = nil)
-      request('DELETE', "/v1/teams/#{team_name}/posts/#{post_number}", nil, headers)
+      request('DELETE', "/v1/teams/#{team}/posts/#{post_number}", nil, headers)
     end
 
     def get_teams(params = {}, headers = nil)
@@ -41,7 +41,7 @@ module Esa
     end
 
     def get_team(params = {}, headers = nil)
-      request('GET', "/v1/teams/#{team_name}", params, headers)
+      request('GET', "/v1/teams/#{team}", params, headers)
     end
 
     private
@@ -58,6 +58,11 @@ module Esa
 
     def uri
       @uri ||= URI.parse(END_POINT)
+    end
+
+    def team
+      raise("team_name must be specified") if @team_name == nil
+      @team_name
     end
 
     def default_headers
