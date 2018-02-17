@@ -1,4 +1,9 @@
 require 'uri'
+require 'esa/client/team'
+require 'esa/client/member'
+require 'esa/client/post'
+require 'esa/client/comment'
+require 'esa/client/star'
 
 module Esa
   class Client
