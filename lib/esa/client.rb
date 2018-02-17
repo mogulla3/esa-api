@@ -2,6 +2,9 @@ require 'uri'
 
 module Esa
   class Client
+    include Esa::Client::Post
+    include Esa::Client::Team
+
     attr_accessor :access_token, :team_name, :open_timeout, :read_timeout, :ssl_timeout
 
     END_POINT = 'https://api.esa.io'.freeze
