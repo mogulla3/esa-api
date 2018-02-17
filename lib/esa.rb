@@ -1,4 +1,6 @@
 require 'esa/version'
 require 'esa/client'
+require 'esa/client/post'
+require 'esa/client/team'
 require 'esa/connection'
 require 'esa/response'
