@@ -6,6 +6,7 @@ require 'esa/client/member'
 require 'esa/client/post'
 require 'esa/client/comment'
 require 'esa/client/star'
+require 'esa/client/watch'
 
 module Esa
   class Client
@@ -14,6 +15,7 @@ module Esa
     include Esa::Client::Post
     include Esa::Client::Comment
     include Esa::Client::Star
+    include Esa::Client::Watch
 
     attr_accessor :access_token, :team_name #, :open_timeout, :read_timeout, :ssl_timeout
 
