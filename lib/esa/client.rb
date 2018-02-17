@@ -41,29 +41,13 @@ module Esa
       yield(self) if block_given?
     end
 
-    def get(path, params = {}, headers = nil)
-      request('GET', path, params, headers)
-    end
-
-    def post(path, params, headers = nil)
-      request('POST', path, params, headers)
-    end
-
-    def patch(path, params, headers = nil)
-      request('PATCH', path, params, headers)
-    end
-
-    def delete(path, headers = nil)
-      request('DELETE', path, nil, headers)
-    end
-
-    private
-
-    def request(method, path, params, headers)
+    def request(method, path, params = nil, headers = nil)
       uri.path = path
       uri.query = URI.encode_www_form(params) if method == 'GET' && params.is_a?(Hash)
       Esa::Response.new(connection.send(method, uri.request_uri, params, headers || default_headers))
     end
+
+    private
 
     def connection
       @connection ||= Esa::Connection.new(uri.host, uri.port)
